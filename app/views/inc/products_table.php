@@ -1,0 +1,52 @@
+<style>
+
+    #data{
+        font-size: .8rem;
+    }
+
+</style>
+
+<div class="container">
+    <div class="columns is-centered display compact" style="width: 100%;">
+    <table id='data' class="table">
+        <thead>
+            <th>Flower Type</th>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Weight</th>
+            <th>Location</th>
+        </thead>
+        <tbody>
+            <?php  foreach($data as $flower) : ?>
+            <tr>
+
+                <td><?php echo $flower->type_of_flower; ?></td>
+                <td><?php echo $flower->name; ?></td>
+                <td><?php echo $flower->price; ?></td>
+                <td><?php echo $flower->weight; ?></td>
+                <td><?php echo $flower->location; ?></td>
+            </tr>
+            <?php endforeach ?>
+
+        </tbody>
+
+    </table>
+</div>
+</div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src='//cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js'></script>
+<script>
+$(document).ready(function() {
+
+    $('#data').DataTable({
+        "lengthMenu": false,
+        "compact": true
+    });
+
+    $(".dataTables_length").hide()
+    $(".current").css({"background-color":"red"})
+
+})
+</script>
+
